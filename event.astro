@@ -1,0 +1,88 @@
+---
+// Logic Section (Server-side)
+const eventName = "FOSS - SRM TRICHY";
+const eventDate = "September X-Y, 2026";
+const venue = "-S.R.M Institute of Science & Technology, Tiruchirapalli";
+import Navbar from '../components/navbar.astro'
+import '../components/event.css'
+---
+
+<html lang="en">
+	<Navbar />
+	<body>
+		<main class="container">
+			<section class="hero">
+				<div class="badge">🚀 Registration Opening Soon</div>
+				<h1 class="hero-title">
+					The Future of Open Source is <span class="text-gradient">In The Cloud.</span>
+				</h1>
+				<p class="hero-subtitle">
+					Join developers, cloud architects, and FOSS enthusiasts for 2 days of hacking, hardening, and scaling. 
+				</p>
+				<div class="meta-grid">
+					<div class="meta-item">
+						<span class="meta-label">WHEN</span>
+						<span class="meta-value">{eventDate}</span>
+					</div>
+					<div class="meta-item">
+						<span class="meta-label">WHERE</span>
+						<span class="meta-value">{venue}</span>
+					</div>
+				</div>
+				<div class="cta-group">
+					<a href="#register" class="btn btn-primary">Secure Your Spot</a>
+					<a href="#about" class="btn btn-secondary">Explore Tracks</a>
+				</div>
+			</section>
+
+			<section id="tracks" class="tracks-section">
+				<h2 class="section-title">Event Highlights</h2>
+				<div class="grid">
+					<div class="card">
+						<div class="card-icon">🏗️</div>
+						<h3>Backend Hardening</h3>
+						<p>Learn to secure APIs, manage connection pools, and deploy bulletproof Spring Boot architectures on AWS.</p>
+					</div>
+					<div class="card">
+						<div class="card-icon">⚡</div>
+						<h3>Edge Computing</h3>
+						<p>Deploy lightning-fast frontends using Astro and optimize routing worldwide using Cloudflare networks.</p>
+					</div>
+					<div class="card">
+						<div class="card-icon">💳</div>
+						<h3>Juspay Integration</h3>
+						<p>Deep-dive into handling highly-scalable payment pipelines and webhooks seamlessly.</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="register" class="register-section">
+				<div class="register-card">
+					<div class="status-indicator">
+						<span class="dot pulse"></span>
+						<span class="status-text">Backend Status: Connecting to Spring Boot Engine...</span>
+					</div>
+					<h2>Join {eventName}</h2>
+					<p>Fill out your details to get notified the exact second checkout goes live via UPI/Juspay.</p>
+					
+					<form onsubmit="event.preventDefault(); alert('Vibe coding successful! Next we link this form to your Spring Boot API.');" class="form-skeleton">
+						<div class="form-group">
+							<label for="name">Full Name</label>
+							<input type="text" id="name" placeholder="Linus Torvalds" disabled />
+						</div>
+						<div class="form-group">
+							<label for="email">Email Address</label>
+							<input type="email" id="email" placeholder="linus@linuxfoundation.org" disabled />
+						</div>
+						<button type="submit" class="btn btn-primary btn-block" disabled>Form Locked (Backend Pending)</button>
+					</form>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<p>&copy; 2026 FOSS Cloud Community. Built with Astro & Spring Boot.</p>
+		</footer>
+
+	</body>
+</html>

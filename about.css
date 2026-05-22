@@ -1,0 +1,208 @@
+:root {
+    --bg-main: #060608;
+    --bg-card: #0d0e12;
+    --border-color: #1f212a;
+    --text-muted: #9ca3af;
+    --accent-color: #6366f1;
+    --accent-glow: rgba(99, 102, 241, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: #f3f4f6;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Hero Layout and ambient light effect */
+.home {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 8rem 2rem 4rem 2rem;
+    flex-grow: 1;
+    position: relative;
+}
+
+.glow-effect {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 300px;
+    background: var(--accent-glow);
+    filter: blur(120px);
+    border-radius: 100px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 5rem auto;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    color: #a5b4fc;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+}
+
+.text-gradient {
+    background: linear-gradient(45deg, #a5b4fc, var(--accent-color));
+        background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+/* Call to Action Buttons */
+.cta-group {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;  /* Vertically aligns text and images on the same center line */
+    gap: 1rem !important;            /* Adds a clean space between the text and each icon */
+    margin-top: 1.5rem;
+}
+.connect:hover {
+    transform: scale(1.1);
+}
+.btn-primary {
+    background: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.2);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background: #4f46e5;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+    transition: background 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+.connect {
+    height: 1.2rem;       /* This locks it right around your font's height scale */
+    width: auto;          /* Prevents squishing or warping */
+    display: block;       /* Helps the browser align it inside the anchor <a> tag safely */
+    transition: transform 0.2s ease; /* Guarantees the image scales safely inside its box */
+}
+img.connect {
+    height: 3rem !important;       /* This locks it right around your font's height scale */
+    width: auto !important;          /* Prevents squishing or warping */
+    display: block !important;       /* Helps the browser align it inside the anchor <a> tag safely */
+    transition: transform 0.2s ease !important; /* Guarantees the image scales safely inside its box */
+}
+.mono-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 2rem;      /* Clean font size */
+    color: #a5b4fc;
+}
+
+/* Features Bento-style Grid */
+.features-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 12px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+    transform: translateY(-4px);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Footer Styles */
+.footer {
+    border-top: 1px solid var(--border-color);
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Mobile Layout Fixes */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    .cta-group {
+        flex-direction: column;
+    }
+    .nav-links {
+        gap: 1rem;
+    }
+}

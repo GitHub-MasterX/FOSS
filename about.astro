@@ -1,0 +1,83 @@
+---
+// src/pages/register.astro
+import Navbar from '../components/navbar.astro';
+import '../components/about.css';
+const communityName = "FOSS.cloud";
+const currentYear = new Date().getFullYear();
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Welcome to {communityName} | Open Source Hub</title>
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+	</head>
+	<body>
+
+	<Navbar /> 
+
+		<main class="home">
+			<div class="glow-effect"></div>
+			
+			<section class="Introduction">
+				<h2>About the club ?</h2>
+				<p class="subtitle">
+					<br>
+					The FOSS Club at SRM IST Tiruchirappalli is a community-driven initiative dedicated to 
+					fostering open-source culture and collaborative development among students.
+                    <br>
+					<br>
+					We focus on bridging the gap between academic learning and practical implementation 
+					through workshops, flagship technical events, open-source projects, contribution drives, 
+					and peer-based learning.
+					<br>
+					<br>
+					Our mission is to transform students from passive learners into active contributors by 
+					creating an ecosystem where innovation, collaboration, and technology thrive together
+				</p>
+				<h2>Past Initiatives -</h2>
+				<p class="subtitle">
+					Every initiative contributes to building a stronger technical community. From workshops and collaboration 
+					sessions to contribution drives and technical meetups, FOSS continues to create meaningful learning experiences 
+					for students.
+                    <h4 justify-content: left>You can explore about past events and intiatives <a href="/event">Here</a></h4>
+				</p>
+				<br><br>
+				<h2>What's Next ?</h2>
+				<p class="subtitle">
+					FOSS is committed to building long-term technical impact through workshops, contribution programs, hackathons, 
+					collaborative projects, and community-driven innovation initiatives.
+				</p>
+				<h2>Join The Community ?</h2>
+				<p class="subtitle">
+					Whether you are a beginner exploring technology or an experienced developer looking to 
+					contribute, FOSS provides a collaborative environment where students can learn, build, 
+					and grow together.
+					<h4 class="cta-group">One could join the community on Discord, GitHub, and WhatsApp for getting news earliest XD !!</h4>
+				</p>
+				<div class="cta-group">
+					<span class="mono-text"> Connect us on - </span>
+					<a href="https://discord.gg/dWpp83mW3" target="_blank" rel="noopener noreferrer"> 
+						<img class="connect" src="../../discord.jpg">
+					</a>
+					<a href="https://github" target="_blank" rel="noopener noreferrer"> 
+						<img class="connect" src="../../github.jpg">
+					</a>
+					<a href="https://whatsapp" target="_blank" rel="noopener noreferrer"> 
+						<img class="connect" src="../../whatsapp.jpg">
+					</a>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<p>&copy; {currentYear} {communityName}. Built with Astro OSS.</p>
+		</footer>
+
+	</body>
+</html>
