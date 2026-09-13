@@ -1,0 +1,124 @@
+---
+// src/pages/register.astro
+import Navbar from '../components/navbar.astro';
+import '../components/event.css';
+
+const communityName = "FOSS.TRICHY";
+const currentYear = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | {communityName}</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <Navbar />
+
+    <!-- Ambient Glow Lighting -->
+    <div class="glow-wrapper" aria-hidden="true">
+      <div class="glow-orb-1"></div>
+      <div class="glow-orb-2"></div>
+    </div>
+
+    <main class="container">
+      <section class="hero" style="padding-bottom: 2rem;">
+        <div class="badge">
+          <span>Member & Event Registration</span>
+        </div>
+
+        <h1 class="hero-title">
+          Join the <span class="text-gradient">FOSS Community</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Become an official member of FOSS SRM Trichy, participate in upcoming hackathons, and contribute to open-source initiatives.
+        </p>
+      </section>
+
+      <section class="register-section" style="padding-top: 0;">
+        <div class="register-card">
+          <div class="status-indicator">
+            <span class="dot pulse"></span>
+            <span class="status-text">Community Membership: Open</span>
+          </div>
+
+          <h2>Community Sign-Up</h2>
+          <p>Fill in your details below to get registered for club activities and workshops.</p>
+
+          <form id="regForm" class="form-skeleton">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" placeholder="Linus Torvalds" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">SRM Email / Personal Email *</label>
+              <input type="email" id="email" name="email" placeholder="student@srmtrc.edu.in" required />
+            </div>
+
+            <div class="form-group">
+              <label for="regno">Register Number / Year</label>
+              <input type="text" id="regno" name="regno" placeholder="e.g. RA2311003010000 (2nd Year)" />
+            </div>
+
+            <div class="form-group">
+              <label for="github">GitHub Profile URL</label>
+              <input type="url" id="github" name="github" placeholder="https://github.com/yourhandle" />
+            </div>
+
+            <div class="form-group">
+              <label for="interest">Primary Area of Interest</label>
+              <select id="interest" name="interest">
+                <option value="web">Web & Modern Frontend (Astro, React, UI/UX)</option>
+                <option value="backend">Backend & APIs (Spring Boot, Java, Python)</option>
+                <option value="cloud">Cloud, DevOps & Linux Systems</option>
+                <option value="general">Open Source Basics & Git</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="regBtn">
+              <span>Complete Registration</span>
+              <span>→</span>
+            </button>
+          </form>
+
+          <div id="regSuccess" style="display: none; margin-top: 1.5rem; padding: 1.25rem; border-radius: 12px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.35); color: #a7f3d0; text-align: center; font-size: 1rem; line-height: 1.6;">
+            <strong>Welcome to FOSS SRM Trichy!</strong><br />
+            Your registration has been received. Be sure to join our official <a href="https://chat.whatsapp.com/GtuJVlEUKXhKn3I67b8D1e" target="_blank" style="color: #25d366; font-weight: 600; text-decoration: underline;">WhatsApp Community</a> to stay updated!
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; {currentYear} {communityName} • Built with Astro OSS.</p>
+    </footer>
+
+    <script>
+      const form = document.getElementById('regForm');
+      const success = document.getElementById('regSuccess');
+      const btn = document.getElementById('regBtn');
+
+      if (form && success && btn) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          btn.setAttribute('disabled', 'true');
+          btn.innerHTML = '<span>Processing Registration...</span>';
+
+          setTimeout(() => {
+            form.style.display = 'none';
+            success.style.display = 'block';
+          }, 600);
+        });
+      }
+    </script>
+  </body>
+</html>

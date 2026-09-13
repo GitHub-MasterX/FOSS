@@ -1,0 +1,281 @@
+---
+// src/pages/event.astro
+import Navbar from '../components/navbar.astro';
+import '../components/event.css';
+
+const eventName = "FOSS • SRM TRICHY";
+const eventDate = "Coming Soon • 2026";
+const venue = "SRM Institute of Science & Technology, Tiruchirappalli";
+const whatsappUrl = "https://chat.whatsapp.com/GtuJVlEUKXhKn3I67b8D1e";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events & Hackathons | {eventName}</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <Navbar />
+
+    <!-- Ambient Glow Lighting -->
+    <div class="glow-wrapper" aria-hidden="true">
+      <div class="glow-orb-1"></div>
+      <div class="glow-orb-2"></div>
+    </div>
+
+    <main class="container">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="badge">
+          <span>Registration Opening Soon</span>
+        </div>
+
+        <h1 class="hero-title">
+          The Future of Open Source is <br />
+          <span class="text-gradient">In The Cloud.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Join developers, cloud architects, and FOSS enthusiasts for intense hacking, backend hardening, 
+          and production scaling at SRM Trichy.
+        </p>
+
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Date & Timing</span>
+            <span class="meta-value">{eventDate}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Campus Venue</span>
+            <span class="meta-value">{venue}</span>
+          </div>
+        </div>
+
+        <div class="cta-group">
+          <a href="#register" class="btn btn-primary">Secure Your Spot</a>
+          <a href="#tracks" class="btn btn-secondary">Explore Tracks</a>
+          <a href="#past-events" class="btn btn-secondary">Past Events</a>
+        </div>
+      </section>
+
+      <!-- Event Tracks Section -->
+      <section id="tracks" class="tracks-section">
+        <div class="section-header">
+          <span class="section-badge">Upcoming Edition</span>
+          <h2 class="section-title">Event Highlights & Tracks</h2>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <h3>Backend Hardening</h3>
+            <p>Learn to design resilient REST APIs, manage database connection pools, secure JWT flows, and deploy bulletproof Spring Boot architectures.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3>Edge Computing</h3>
+            <p>Deploy lightning-fast frontends using Astro and modern client hydration, with ultra-low latency routing on global cloud networks.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <h3>Payment Engineering</h3>
+            <p>Deep-dive into high-concurrency payment gateways, webhook idempotency, and transactional integrity in fintech systems.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Early Registration Section -->
+      <section id="register" class="register-section">
+        <div class="register-card">
+          <div class="status-indicator">
+            <span class="dot pulse"></span>
+            <span class="status-text">Backend Status: Connecting to API...</span>
+          </div>
+
+          <h2>Join {eventName}</h2>
+          <p>Leave your details below to get instant early-bird access as soon as registration officially goes live!</p>
+
+          <form id="interestForm" class="form-skeleton">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Linus Torvalds" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="linus@linuxfoundation.org" required />
+            </div>
+
+            <div class="form-group">
+              <label for="track">Preferred Track</label>
+              <select id="track" name="track">
+                <option value="backend">Backend Hardening (Spring Boot / Java)</option>
+                <option value="edge">Edge & Web Frontend (Astro / Modern Web)</option>
+                <option value="fintech">Payment Pipelines & Cloud Infra</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+              <span>Notify Me on Launch</span>
+              <span>→</span>
+            </button>
+          </form>
+
+          <div id="formFeedback" style="display: none; margin-top: 1.25rem; padding: 1rem; border-radius: 8px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); color: #a7f3d0; text-align: center; font-size: 0.95rem;">
+            ✓ Thank you! You are on the priority list. We will notify you when registrations open!
+          </div>
+        </div>
+      </section>
+
+      <!-- PAST EVENTS SECTION (UNIFORM CARDS WITH COMPLETE UNCROPPED IMAGES) -->
+      <section id="past-events" class="past-events-section">
+        <div class="section-header">
+          <span class="section-badge">Previous Initiatives</span>
+          <h2 class="section-title">Past Events</h2>
+          <p class="section-sub">A look back at our technical workshops, cybersecurity sessions, and 24-hour hackathons.</p>
+        </div>
+
+        <div class="past-events-grid">
+          <!-- Event 1: GenTech -->
+          <div class="past-event-card">
+            <div class="event-img-frame">
+              <img src="/past-images/Gentech.jpeg" alt="GenTech Genetic Data Workshop Background" class="event-img-bg" aria-hidden="true" />
+              <img src="/past-images/Gentech.jpeg" alt="GenTech: Workshop on open source tools used to analyse genetic data" class="event-img-fg" loading="lazy" />
+            </div>
+            <div class="past-event-content">
+              <span class="past-event-tag">Bioinformatics Workshop</span>
+              <h3 class="past-event-title">GenTech</h3>
+              <p class="past-event-desc">
+                A hands-on workshop on open-source tools and computational bioinformatics environments used to analyze and process complex genetic data.
+              </p>
+            </div>
+          </div>
+
+          <!-- Event 2: Digital Security in Open Source with SFLC -->
+          <div class="past-event-card">
+            <div class="event-img-frame">
+              <img src="/past-images/DS.jpeg" alt="Digital Security in Open Source Background" class="event-img-bg" aria-hidden="true" />
+              <img src="/past-images/DS.jpeg" alt="Workshop conducted by people from SFLC on digital security in open source" class="event-img-fg" loading="lazy" />
+            </div>
+            <div class="past-event-content">
+              <span class="past-event-tag">Security & SFLC.in</span>
+              <h3 class="past-event-title">Digital Security in Open Source</h3>
+              <p class="past-event-desc">
+                An in-depth workshop conducted by experts from SFLC.in (Software Freedom Law Center), teaching digital privacy rights, threat modeling, and open-source security hygiene.
+              </p>
+            </div>
+          </div>
+
+          <!-- Event 3: Yuva Hackathon -->
+          <div class="past-event-card">
+            <div class="event-img-frame">
+              <img src="/past-images/yuva_banner.jpeg" alt="Yuva Hackathon Banner Background" class="event-img-bg" aria-hidden="true" />
+              <img src="/past-images/yuva_banner.jpeg" alt="24hr hackathon - Yuva Hackathon conducted last year" class="event-img-fg" loading="lazy" />
+            </div>
+            <div class="past-event-content">
+              <span class="past-event-tag">24-Hour Hackathon</span>
+              <h3 class="past-event-title">Yuva Hackathon</h3>
+              <p class="past-event-desc">
+                Our flagship 24-hour non-stop open-source hackathon conducted last year at SRM Trichy, uniting student developers to prototype, code, and deploy real community software.
+              </p>
+            </div>
+          </div>
+
+          <!-- Event 4: Yuva Hackathon Community -->
+          <div class="past-event-card">
+            <div class="event-img-frame">
+              <img src="/past-images/yuva-group.jpeg" alt="Yuva Hackathon Community Group Photo Background" class="event-img-bg" aria-hidden="true" />
+              <img src="/past-images/yuva-group.jpeg" alt="Yuva Hackathon community, mentors and organizers group photo" class="event-img-fg" loading="lazy" />
+            </div>
+            <div class="past-event-content">
+              <span class="past-event-tag">Community & Mentors</span>
+              <h3 class="past-event-title">Yuva Hackathon Community</h3>
+              <p class="past-event-desc">
+                Student participants, organizers, mentors, and jury members celebrating the conclusion of the 24-hour Yuva Hackathon finale.
+              </p>
+            </div>
+          </div>
+
+          <!-- Event 5: 24-Hour Hacking in Action -->
+          <div class="past-event-card">
+            <div class="event-img-frame">
+              <img src="/past-images/yuva.jpeg" alt="24-Hour Hacking in Action Background" class="event-img-bg" aria-hidden="true" />
+              <img src="/past-images/yuva.jpeg" alt="24-Hour Hacking in Action during Yuva Hackathon" class="event-img-fg" loading="lazy" />
+            </div>
+            <div class="past-event-content">
+              <span class="past-event-tag">Overnight Sprint</span>
+              <h3 class="past-event-title">24-Hour Hacking in Action</h3>
+              <p class="past-event-desc">
+                Teams collaborating, debugging, and building working prototypes around the clock under mentor guidance during the hackathon.
+              </p>
+            </div>
+          </div>
+
+          <!-- Event 6: Campus Venue & Stage -->
+          <div class="past-event-card">
+            <div class="event-img-frame">
+              <img src="/past-images/venue.jpeg" alt="Campus Event Venue Background" class="event-img-bg" aria-hidden="true" />
+              <img src="/past-images/venue.jpeg" alt="SRM IST Tiruchirappalli campus presentation hall" class="event-img-fg" loading="lazy" />
+            </div>
+            <div class="past-event-content">
+              <span class="past-event-tag">Campus Venue</span>
+              <h3 class="past-event-title">SRM IST Campus Stage</h3>
+              <p class="past-event-desc">
+                The university auditorium and seminar hall hosting keynote lectures, technical demos, and project presentations at SRM Trichy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WhatsApp Community Callout -->
+      <section class="whatsapp-banner">
+        <h2>Join Our Community on WhatsApp</h2>
+        <p>Stay informed about future workshop registrations, hackathon announcements, and community meetups:</p>
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+          <img src="/whatsapp.jpg" alt="WhatsApp" />
+          <span>Join WhatsApp Community</span>
+          <span>→</span>
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 FOSS Community • Built with Astro & Spring Boot.</p>
+    </footer>
+
+    <script>
+      const form = document.getElementById('interestForm');
+      const feedback = document.getElementById('formFeedback');
+      const btn = document.getElementById('submitBtn');
+
+      if (form && feedback && btn) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          btn.setAttribute('disabled', 'true');
+          btn.innerHTML = '<span>Saving...</span>';
+          
+          setTimeout(() => {
+            form.style.display = 'none';
+            feedback.style.display = 'block';
+          }, 600);
+        });
+      }
+    </script>
+  </body>
+</html>

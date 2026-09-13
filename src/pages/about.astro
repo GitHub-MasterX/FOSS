@@ -1,0 +1,233 @@
+---
+// src/pages/about.astro
+import Navbar from '../components/navbar.astro';
+import '../components/about.css';
+
+const communityName = "FOSS.TRICHY";
+const currentYear = new Date().getFullYear();
+const whatsappUrl = "https://chat.whatsapp.com/GtuJVlEUKXhKn3I67b8D1e";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | {communityName}</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <Navbar /> 
+
+    <!-- Ambient Glow Lighting -->
+    <div class="glow-wrapper" aria-hidden="true">
+      <div class="glow-orb-1"></div>
+      <div class="glow-orb-2"></div>
+    </div>
+
+    <main class="about-page">
+      <!-- Hero Section -->
+      <section class="about-hero">
+        <div class="badge-pill">
+          <span>About FOSS SRM Trichy</span>
+        </div>
+
+        <h1 class="page-title">
+          Built by Students, <br />
+          <span class="text-gradient">Driven by Open Source.</span>
+        </h1>
+
+        <p class="lead-text">
+          The FOSS Club at SRM Institute of Science & Technology, Tiruchirappalli is an active student collective 
+          dedicated to fostering open-source software culture, peer mentorship, and real-world engineering practices.
+        </p>
+      </section>
+
+      <!-- Section: Who We Are & What We Stand For -->
+      <section class="content-section">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Who We Are</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="card-badge-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <h3>Bridging the Gap</h3>
+            </div>
+            <p>
+              Academic coursework teaches foundational algorithms and theory; FOSS bridges that directly with real-world 
+              tools. We dive deep into Git workflows, open-source licensing, CI/CD automation, pull request etiquette, 
+              and production code reviews.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="card-badge-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3>Collaborative Culture</h3>
+            </div>
+            <p>
+              We believe great engineering happens through peer exchange and shared curiosity. From first-year students 
+              submitting their first pull requests to senior mentors architecting cloud systems, everyone has a place to 
+              learn and teach.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Pillars of Impact -->
+      <section class="content-section">
+        <div class="section-title-wrap">
+          <h2 class="section-title">What We Do</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="card-badge-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <h3>Hands-on Workshops</h3>
+            </div>
+            <p>Practical weekend bootcamps focusing on Git, Linux environments, web technologies, and backend microservices.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="card-badge-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+              </div>
+              <h3>Hackathons & Sprints</h3>
+            </div>
+            <p>High-energy coding marathons where students build tangible open-source solutions to address community challenges.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="card-badge-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <h3>Upstream Contributions</h3>
+            </div>
+            <p>Guiding students to contribute code, fix issues, and draft documentation in popular global open-source projects.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Past Initiatives (GenTech, Digital Security with SFLC, Yuva Hackathon) -->
+      <section class="content-section">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Past Initiatives & Milestones</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="card-badge-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <h3>GenTech</h3>
+            </div>
+            <p>
+              A focused workshop on open-source tools and computational bioinformatics environments used to analyze and process complex genetic data.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="card-badge-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h3>Digital Security</h3>
+            </div>
+            <p>
+              Conducted by experts from SFLC.in (Software Freedom Law Center), teaching open-source digital security hygiene, privacy, and user rights.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="card-badge-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <h3>Yuva Hackathon</h3>
+            </div>
+            <p>
+              A premier 24-hour non-stop hackathon conducted last year at SRM Trichy, uniting student developers to brainstorm, code, and ship working prototypes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Callout Banner to Past Images in Events -->
+        <div class="callout-card">
+          <div class="callout-content">
+            <h4>Want to see pictures from these events?</h4>
+            <p>Browse through photos from our 24-hour hackathon, workshops, and campus sessions in our event gallery.</p>
+          </div>
+          <a href="/event#past-images" class="callout-btn">
+            <span>View Past Images</span>
+            <span>→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Section: What's Ahead -->
+      <section class="content-section">
+        <div class="section-title-wrap">
+          <h2 class="section-title">What's Next?</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="card-badge-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <h3>Hacktoberfest & Contribution Drives</h3>
+            </div>
+            <p>Dedicated monthly contribution sprints connecting members to verified beginner-friendly issues in global repos.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-header">
+              <div class="card-badge-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+              </div>
+              <h3>Cloud & High-Throughput Sprints</h3>
+            </div>
+            <p>Advanced tracks exploring distributed cloud deployments, edge computing, Spring Boot API resilience, and scalable databases.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Join Community Banner (WhatsApp Only) -->
+      <section class="join-banner">
+        <h2>Join The Community on WhatsApp</h2>
+        <p>
+          Connect directly with fellow students, event organizers, and open-source contributors in our official WhatsApp group:
+        </p>
+
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="social-card-btn whatsapp-cta" style="background: rgba(37, 211, 102, 0.1); border-color: rgba(37, 211, 102, 0.35); color: #a7f3d0;">
+          <img src="/whatsapp.jpg" alt="WhatsApp" />
+          <span>Join WhatsApp Community</span>
+          <span>→</span>
+        </a>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; {currentYear} {communityName} • Built with Astro OSS.</p>
+      <p style="font-size: 0.8rem; color: #6b7280; margin-top: 0.35rem;">SRM Institute of Science & Technology, Tiruchirappalli</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+---
+// src/pages/index.astro
+import Navbar from "../components/navbar.astro";
+import '../components/index.css';
+
+const communityName = "FOSS.TRICHY";
+const currentYear = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to {communityName} | Open Source Community</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <Navbar /> 
+
+    <!-- Animated Ambient Lighting -->
+    <div class="glow-wrapper" aria-hidden="true">
+      <div class="glow-orb-1"></div>
+      <div class="glow-orb-2"></div>
+    </div>
+
+    <main class="home">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="badge-pill">
+          <span class="pulse-dot"></span>
+          <span>Building Open Source Culture in Trichy</span>
+        </div>
+
+        <h1 class="hero-title">
+          Where Builders Create <br />
+          <span class="text-gradient">The Open Source Future.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          FOSS Club at SRM Institute of Science & Technology, Tiruchirappalli is a student-driven open-source 
+          community focused on collaboration, modern tech stacks, and shipping real-world projects.
+        </p>
+
+        <div class="hero-actions">
+          <a href="/event" class="btn-primary">
+            <span>Explore Upcoming Events</span>
+            <span>→</span>
+          </a>
+          <a href="/about" class="btn-secondary">
+            <span>Learn About Our Mission</span>
+          </a>
+        </div>
+
+        <!-- WhatsApp Community Bar -->
+        <div class="social-connect-bar" id="connect">
+          <span class="social-label">Connect With Us:</span>
+          <a href="https://chat.whatsapp.com/GtuJVlEUKXhKn3I67b8D1e" target="_blank" rel="noopener noreferrer" class="social-chip" title="Join our WhatsApp Community">
+            <img src="/whatsapp.jpg" alt="WhatsApp" />
+            <span>Join WhatsApp Community</span>
+            <span class="chip-arrow">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Bento Info Section: Culture, Vision & Mission -->
+      <section class="bento-section">
+        <div class="section-header">
+          <span class="section-badge">Core Pillars</span>
+          <h2 class="section-heading">Empowering Students Through Open Source</h2>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Card 1: What is FOSS -->
+          <div class="bento-card bento-span-7">
+            <div class="card-icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3>What is FOSS?</h3>
+            <p>
+              Free and Open Source Software (FOSS) represents a mindset of collective transparency, sharing, and 
+              borderless collaboration. Rather than treating software as a black box, we examine the source code, 
+              contribute upstream, and build software that benefits everyone worldwide.
+            </p>
+          </div>
+
+          <!-- Card 2: Why it matters -->
+          <div class="bento-card bento-span-5">
+            <div class="card-icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3>Why It Matters</h3>
+            <p>
+              Open source is the backbone of modern tech infrastructure—from Linux to Kubernetes to Astro. Contributing to 
+              open source gives you real-world code reviews, global portfolio visibility, and true production engineering experience.
+            </p>
+          </div>
+
+          <!-- Card 3: Vision -->
+          <div class="bento-card bento-span-6">
+            <div class="card-icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            </div>
+            <h3>Our Vision</h3>
+            <p>
+              To establish a sustainable and vibrant developer ecosystem in Trichy, empowering students to progress from first-line 
+              coders to core maintainers of impactful software projects.
+            </p>
+          </div>
+
+          <!-- Card 4: Mission -->
+          <div class="bento-card bento-span-6">
+            <div class="card-icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <h3>Our Mission</h3>
+            <ul class="bento-list">
+              <li><span class="bullet-check">✓</span> Promote git fluency and real contribution workflows across campuses.</li>
+              <li><span class="bullet-check">✓</span> Host hands-on hackathons, bug squashes, and technical architecture workshops.</li>
+              <li><span class="bullet-check">✓</span> Bridge the gap between classroom theory and enterprise open source standards.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Community Highlights Grid -->
+      <section class="bento-section">
+        <div class="section-header">
+          <span class="section-badge">Community Experience</span>
+          <h2 class="section-heading">Why Join FOSS SRM Trichy?</h2>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3>Fast & Modern</h3>
+            <p>We work with cutting-edge tools—from Astro, React, and TypeScript to high-concurrency Spring Boot backend architectures.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Community First</h3>
+            <p>Entirely student-driven and volunteer-led. Learn in a welcoming peer environment where questions are always encouraged.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Production Ready</h3>
+            <p>Deploy real systems across cloud platforms, configure CI/CD pipelines, and contribute directly to active GitHub repositories.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; {currentYear} {communityName} • Built with Astro OSS.</p>
+        <p style="font-size: 0.8rem; color: #6b7280;">SRM Institute of Science and Technology, Tiruchirappalli Campus</p>
+      </div>
+    </footer>
+  </body>
+</html>
