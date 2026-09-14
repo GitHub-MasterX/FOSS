@@ -7,6 +7,7 @@ const eventName = "FOSS • SRM TRICHY";
 const eventDate = "Coming Soon • 2026";
 const venue = "SRM Institute of Science & Technology, Tiruchirappalli";
 const whatsappUrl = "https://chat.whatsapp.com/GtuJVlEUKXhKn3I67b8D1e";
+const registrationUrl = "https://tsrm.in";
 ---
 
 <!doctype html>
@@ -34,7 +35,7 @@ const whatsappUrl = "https://chat.whatsapp.com/GtuJVlEUKXhKn3I67b8D1e";
       <!-- Hero Section -->
       <section class="hero">
         <div class="badge">
-          <span>Registration Opening Soon</span>
+          <span>Registration Open on tsrm.in</span>
         </div>
 
         <h1 class="hero-title">
@@ -59,7 +60,10 @@ const whatsappUrl = "https://chat.whatsapp.com/GtuJVlEUKXhKn3I67b8D1e";
         </div>
 
         <div class="cta-group">
-          <a href="#register" class="btn btn-primary">Secure Your Spot</a>
+          <a href={registrationUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span>Register on tsrm.in</span>
+            <span class="btn-arrow" aria-hidden="true">↗</span>
+          </a>
           <a href="#tracks" class="btn btn-secondary">Explore Tracks</a>
           <a href="#past-events" class="btn btn-secondary">Past Events</a>
         </div>
@@ -99,145 +103,144 @@ const whatsappUrl = "https://chat.whatsapp.com/GtuJVlEUKXhKn3I67b8D1e";
         </div>
       </section>
 
-      <!-- Early Registration Section -->
+      <!-- Official Registration Portal Section -->
       <section id="register" class="register-section">
         <div class="register-card">
           <div class="status-indicator">
             <span class="dot pulse"></span>
-            <span class="status-text">Backend Status: Connecting to API...</span>
+            <span class="status-text">Official Portal: Active</span>
           </div>
 
-          <h2>Join {eventName}</h2>
-          <p>Leave your details below to get instant early-bird access as soon as registration officially goes live!</p>
+          <h2>Event & Membership Registration</h2>
+          <p>
+            All registrations for FOSS SRM Trichy events, workshops, and community memberships are hosted directly on the SRM Trichy registration portal at <strong>tsrm.in</strong>.
+          </p>
 
-          <form id="interestForm" class="form-skeleton">
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="Linus Torvalds" required />
-            </div>
+          <div class="portal-cta-wrap">
+            <a href={registrationUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block btn-portal">
+              <span>Go to Registration Portal (tsrm.in)</span>
+              <span class="portal-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
 
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="linus@linuxfoundation.org" required />
-            </div>
-
-            <div class="form-group">
-              <label for="track">Preferred Track</label>
-              <select id="track" name="track">
-                <option value="backend">Backend Hardening (Spring Boot / Java)</option>
-                <option value="edge">Edge & Web Frontend (Astro / Modern Web)</option>
-                <option value="fintech">Payment Pipelines & Cloud Infra</option>
-              </select>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
-              <span>Notify Me on Launch</span>
-              <span>→</span>
-            </button>
-          </form>
-
-          <div id="formFeedback" style="display: none; margin-top: 1.25rem; padding: 1rem; border-radius: 8px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); color: #a7f3d0; text-align: center; font-size: 0.95rem;">
-            ✓ Thank you! You are on the priority list. We will notify you when registrations open!
+          <div class="portal-badge-note">
+            <span>Direct link: <a href={registrationUrl} target="_blank" rel="noopener noreferrer">https://tsrm.in</a></span>
           </div>
         </div>
       </section>
 
-      <!-- PAST EVENTS SECTION (UNIFORM CARDS WITH COMPLETE UNCROPPED IMAGES) -->
+      <!-- PAST EVENTS SECTION (GROUPED BY EVENT: GENTECH, DIGITAL SECURITY, YUVA HACKATHON) -->
       <section id="past-events" class="past-events-section">
+        <span id="past-images" aria-hidden="true"></span>
         <div class="section-header">
           <span class="section-badge">Previous Initiatives</span>
           <h2 class="section-title">Past Events</h2>
-          <p class="section-sub">A look back at our technical workshops, cybersecurity sessions, and 24-hour hackathons.</p>
+          <p class="section-sub">A look back at our technical workshops, digital security sessions, and flagship 24-hour hackathon.</p>
         </div>
 
-        <div class="past-events-grid">
-          <!-- Event 1: GenTech -->
-          <div class="past-event-card">
-            <div class="event-img-frame">
-              <img src="/past-images/Gentech.jpeg" alt="GenTech Genetic Data Workshop Background" class="event-img-bg" aria-hidden="true" />
-              <img src="/past-images/Gentech.jpeg" alt="GenTech: Workshop on open source tools used to analyse genetic data" class="event-img-fg" loading="lazy" />
-            </div>
-            <div class="past-event-content">
-              <span class="past-event-tag">Bioinformatics Workshop</span>
-              <h3 class="past-event-title">GenTech</h3>
-              <p class="past-event-desc">
+        <div class="past-events-container">
+          <!-- EVENT 1: GenTech -->
+          <div class="event-showcase-section">
+            <div class="event-showcase-header">
+              <div class="event-badge-row">
+                <span class="past-event-tag">Bioinformatics Workshop</span>
+              </div>
+              <h3 class="event-showcase-title">GenTech</h3>
+              <p class="event-showcase-desc">
                 A hands-on workshop on open-source tools and computational bioinformatics environments used to analyze and process complex genetic data.
               </p>
             </div>
-          </div>
 
-          <!-- Event 2: Digital Security in Open Source with SFLC -->
-          <div class="past-event-card">
-            <div class="event-img-frame">
-              <img src="/past-images/DS.jpeg" alt="Digital Security in Open Source Background" class="event-img-bg" aria-hidden="true" />
-              <img src="/past-images/DS.jpeg" alt="Workshop conducted by people from SFLC on digital security in open source" class="event-img-fg" loading="lazy" />
-            </div>
-            <div class="past-event-content">
-              <span class="past-event-tag">Security & SFLC.in</span>
-              <h3 class="past-event-title">Digital Security in Open Source</h3>
-              <p class="past-event-desc">
-                An in-depth workshop conducted by experts from SFLC.in (Software Freedom Law Center), teaching digital privacy rights, threat modeling, and open-source security hygiene.
-              </p>
+            <div class="event-gallery-grid cols-single">
+              <div class="gallery-card">
+                <div class="event-img-frame">
+                  <img src="/past-images/Gentech.jpeg" alt="GenTech Genetic Data Workshop Background" class="event-img-bg" aria-hidden="true" />
+                  <img src="/past-images/Gentech.jpeg" alt="GenTech: Workshop on open source tools used to analyse genetic data" class="event-img-fg" loading="lazy" />
+                </div>
+                <div class="gallery-caption">
+                  <span class="caption-title">Workshop Overview & Curriculum</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Event 3: Yuva Hackathon -->
-          <div class="past-event-card">
-            <div class="event-img-frame">
-              <img src="/past-images/yuva_banner.jpeg" alt="Yuva Hackathon Banner Background" class="event-img-bg" aria-hidden="true" />
-              <img src="/past-images/yuva_banner.jpeg" alt="24hr hackathon - Yuva Hackathon conducted last year" class="event-img-fg" loading="lazy" />
-            </div>
-            <div class="past-event-content">
-              <span class="past-event-tag">24-Hour Hackathon</span>
-              <h3 class="past-event-title">Yuva Hackathon</h3>
-              <p class="past-event-desc">
-                Our flagship 24-hour non-stop open-source hackathon conducted last year at SRM Trichy, uniting student developers to prototype, code, and deploy real community software.
+          <!-- EVENT 2: Digital Security in Open Source with SFLC (Includes Stage Photo) -->
+          <div class="event-showcase-section">
+            <div class="event-showcase-header">
+              <div class="event-badge-row">
+                <span class="past-event-tag">Cybersecurity & SFLC.in</span>
+              </div>
+              <h3 class="event-showcase-title">Digital Security in Open Source</h3>
+              <p class="event-showcase-desc">
+                An in-depth workshop conducted by experts from SFLC.in (Software Freedom Law Center), teaching digital privacy rights, security threat modeling, and open-source hygiene.
               </p>
+            </div>
+
+            <div class="event-gallery-grid cols-double">
+              <div class="gallery-card">
+                <div class="event-img-frame">
+                  <img src="/past-images/DS.jpeg" alt="Digital Security in Open Source Background" class="event-img-bg" aria-hidden="true" />
+                  <img src="/past-images/DS.jpeg" alt="Workshop conducted by people from SFLC on digital security in open source" class="event-img-fg" loading="lazy" />
+                </div>
+                <div class="gallery-caption">
+                  <span class="caption-title">Official Workshop Poster (SFLC.in)</span>
+                </div>
+              </div>
+
+              <div class="gallery-card">
+                <div class="event-img-frame">
+                  <img src="/past-images/venue.jpeg" alt="Digital Security Workshop Stage Background" class="event-img-bg" aria-hidden="true" />
+                  <img src="/past-images/venue.jpeg" alt="Digital Security workshop presentation on SRM University stage" class="event-img-fg" loading="lazy" />
+                </div>
+                <div class="gallery-caption">
+                  <span class="caption-title">SRM University Presentation & Session Stage</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Event 4: Yuva Hackathon Community -->
-          <div class="past-event-card">
-            <div class="event-img-frame">
-              <img src="/past-images/yuva-group.jpeg" alt="Yuva Hackathon Community Group Photo Background" class="event-img-bg" aria-hidden="true" />
-              <img src="/past-images/yuva-group.jpeg" alt="Yuva Hackathon community, mentors and organizers group photo" class="event-img-fg" loading="lazy" />
-            </div>
-            <div class="past-event-content">
-              <span class="past-event-tag">Community & Mentors</span>
-              <h3 class="past-event-title">Yuva Hackathon Community</h3>
-              <p class="past-event-desc">
-                Student participants, organizers, mentors, and jury members celebrating the conclusion of the 24-hour Yuva Hackathon finale.
+          <!-- EVENT 3: Yuva Hackathon (ALL IN ONE SECTION: Banner, 24hr Action, Community Group) -->
+          <div class="event-showcase-section highlight-section">
+            <div class="event-showcase-header">
+              <div class="event-badge-row">
+                <span class="past-event-tag tag-highlight">Flagship 24-Hour Hackathon</span>
+              </div>
+              <h3 class="event-showcase-title">Yuva Hackathon</h3>
+              <p class="event-showcase-desc">
+                Our flagship 24-hour non-stop open-source hackathon conducted last year at SRM Trichy. Student developers gathered to prototype, code, and deploy real community software overnight under mentor guidance.
               </p>
             </div>
-          </div>
 
-          <!-- Event 5: 24-Hour Hacking in Action -->
-          <div class="past-event-card">
-            <div class="event-img-frame">
-              <img src="/past-images/yuva.jpeg" alt="24-Hour Hacking in Action Background" class="event-img-bg" aria-hidden="true" />
-              <img src="/past-images/yuva.jpeg" alt="24-Hour Hacking in Action during Yuva Hackathon" class="event-img-fg" loading="lazy" />
-            </div>
-            <div class="past-event-content">
-              <span class="past-event-tag">Overnight Sprint</span>
-              <h3 class="past-event-title">24-Hour Hacking in Action</h3>
-              <p class="past-event-desc">
-                Teams collaborating, debugging, and building working prototypes around the clock under mentor guidance during the hackathon.
-              </p>
-            </div>
-          </div>
+            <div class="event-gallery-grid cols-triple">
+              <div class="gallery-card">
+                <div class="event-img-frame">
+                  <img src="/past-images/yuva_banner.jpeg" alt="Yuva Hackathon Banner Background" class="event-img-bg" aria-hidden="true" />
+                  <img src="/past-images/yuva_banner.jpeg" alt="24hr hackathon - Yuva Hackathon conducted last year" class="event-img-fg" loading="lazy" />
+                </div>
+                <div class="gallery-caption">
+                  <span class="caption-title">Official Hackathon Banner</span>
+                </div>
+              </div>
 
-          <!-- Event 6: Campus Venue & Stage -->
-          <div class="past-event-card">
-            <div class="event-img-frame">
-              <img src="/past-images/venue.jpeg" alt="Campus Event Venue Background" class="event-img-bg" aria-hidden="true" />
-              <img src="/past-images/venue.jpeg" alt="SRM IST Tiruchirappalli campus presentation hall" class="event-img-fg" loading="lazy" />
-            </div>
-            <div class="past-event-content">
-              <span class="past-event-tag">Campus Venue</span>
-              <h3 class="past-event-title">SRM IST Campus Stage</h3>
-              <p class="past-event-desc">
-                The university auditorium and seminar hall hosting keynote lectures, technical demos, and project presentations at SRM Trichy.
-              </p>
+              <div class="gallery-card">
+                <div class="event-img-frame">
+                  <img src="/past-images/yuva.jpeg" alt="24-Hour Hacking in Action Background" class="event-img-bg" aria-hidden="true" />
+                  <img src="/past-images/yuva.jpeg" alt="24-Hour Hacking in Action during Yuva Hackathon" class="event-img-fg" loading="lazy" />
+                </div>
+                <div class="gallery-caption">
+                  <span class="caption-title">24-Hour Hacking in Action</span>
+                </div>
+              </div>
+
+              <div class="gallery-card">
+                <div class="event-img-frame">
+                  <img src="/past-images/yuva-group.jpeg" alt="Yuva Hackathon Community Group Photo Background" class="event-img-bg" aria-hidden="true" />
+                  <img src="/past-images/yuva-group.jpeg" alt="Yuva Hackathon community, mentors and organizers finale photo" class="event-img-fg" loading="lazy" />
+                </div>
+                <div class="gallery-caption">
+                  <span class="caption-title">Community, Mentors & Organizers Finale</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -258,24 +261,5 @@ const whatsappUrl = "https://chat.whatsapp.com/GtuJVlEUKXhKn3I67b8D1e";
     <footer>
       <p>&copy; 2026 FOSS Community • Built with Astro & Spring Boot.</p>
     </footer>
-
-    <script>
-      const form = document.getElementById('interestForm');
-      const feedback = document.getElementById('formFeedback');
-      const btn = document.getElementById('submitBtn');
-
-      if (form && feedback && btn) {
-        form.addEventListener('submit', (e) => {
-          e.preventDefault();
-          btn.setAttribute('disabled', 'true');
-          btn.innerHTML = '<span>Saving...</span>';
-          
-          setTimeout(() => {
-            form.style.display = 'none';
-            feedback.style.display = 'block';
-          }, 600);
-        });
-      }
-    </script>
   </body>
 </html>

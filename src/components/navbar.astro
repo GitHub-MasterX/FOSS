@@ -23,8 +23,9 @@ const pathname = Astro.url.pathname;
       <a href="/event" class={pathname === "/event" || pathname === "/event/" ? "active" : ""}>
         <span>Events</span>
       </a>
-      <a href="/register" class={`nav-btn-register ${pathname === "/register" || pathname === "/register/" ? "active" : ""}`}>
+      <a href="https://tsrm.in" target="_blank" rel="noopener noreferrer" class="nav-btn-register">
         <span>Register</span>
+        <span class="external-icon" aria-hidden="true">↗</span>
         <span class="btn-glow"></span>
       </a>
     </nav>
@@ -49,8 +50,8 @@ const pathname = Astro.url.pathname;
       <a href="/event" class={pathname === "/event" || pathname === "/event/" ? "active" : ""}>
         <span>Events</span>
       </a>
-      <a href="/register" class={`mobile-btn-register ${pathname === "/register" || pathname === "/register/" ? "active" : ""}`}>
-        <span>Register Now</span>
+      <a href="https://tsrm.in" target="_blank" rel="noopener noreferrer" class="mobile-btn-register">
+        <span>Register on tsrm.in ↗</span>
       </a>
     </nav>
   </div>
@@ -208,6 +209,9 @@ const pathname = Astro.url.pathname;
   /* Register CTA Button */
   .nav-btn-register {
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
     color: #ffffff !important;
     padding: 0.55rem 1.35rem !important;
@@ -220,10 +224,20 @@ const pathname = Astro.url.pathname;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  .external-icon {
+    font-size: 0.85rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+
   .nav-btn-register:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 24px 0 rgba(99, 102, 241, 0.6);
     border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .nav-btn-register:hover .external-icon {
+    transform: translate(2px, -2px);
   }
 
   /* Hamburger Toggle */

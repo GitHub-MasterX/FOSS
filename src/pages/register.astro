@@ -1,124 +1,30 @@
 ---
 // src/pages/register.astro
-import Navbar from '../components/navbar.astro';
-import '../components/event.css';
-
-const communityName = "FOSS.TRICHY";
-const currentYear = new Date().getFullYear();
+return Astro.redirect("https://tsrm.in", 301);
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta http-equiv="refresh" content="0;url=https://tsrm.in" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register | {communityName}</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>Redirecting to Registration | FOSS SRM Trichy</title>
+    <link rel="canonical" href="https://tsrm.in" />
   </head>
-  <body>
-    <Navbar />
-
-    <!-- Ambient Glow Lighting -->
-    <div class="glow-wrapper" aria-hidden="true">
-      <div class="glow-orb-1"></div>
-      <div class="glow-orb-2"></div>
+  <body style="background: #060608; color: #e5e7eb; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 1.5rem; text-align: center;">
+    <div style="max-width: 480px; background: rgba(14, 15, 22, 0.9); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 2.5rem 2rem; box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);">
+      <h2 style="color: #ffffff; margin-top: 0; margin-bottom: 0.75rem; font-size: 1.5rem;">Redirecting to Registration Portal...</h2>
+      <p style="color: #9ca3af; margin-bottom: 1.75rem; font-size: 0.95rem; line-height: 1.5;">
+        Official club registrations and event sign-ups are hosted on the SRM Trichy portal at <strong>tsrm.in</strong>.
+      </p>
+      <a href="https://tsrm.in" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.75rem; background: linear-gradient(135deg, #6366f1, #4f46e5); color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);">
+        <span>Continue to tsrm.in</span>
+        <span>→</span>
+      </a>
     </div>
-
-    <main class="container">
-      <section class="hero" style="padding-bottom: 2rem;">
-        <div class="badge">
-          <span>Member & Event Registration</span>
-        </div>
-
-        <h1 class="hero-title">
-          Join the <span class="text-gradient">FOSS Community</span>
-        </h1>
-
-        <p class="hero-subtitle">
-          Become an official member of FOSS SRM Trichy, participate in upcoming hackathons, and contribute to open-source initiatives.
-        </p>
-      </section>
-
-      <section class="register-section" style="padding-top: 0;">
-        <div class="register-card">
-          <div class="status-indicator">
-            <span class="dot pulse"></span>
-            <span class="status-text">Community Membership: Open</span>
-          </div>
-
-          <h2>Community Sign-Up</h2>
-          <p>Fill in your details below to get registered for club activities and workshops.</p>
-
-          <form id="regForm" class="form-skeleton">
-            <div class="form-group">
-              <label for="name">Full Name *</label>
-              <input type="text" id="name" name="name" placeholder="Linus Torvalds" required />
-            </div>
-
-            <div class="form-group">
-              <label for="email">SRM Email / Personal Email *</label>
-              <input type="email" id="email" name="email" placeholder="student@srmtrc.edu.in" required />
-            </div>
-
-            <div class="form-group">
-              <label for="regno">Register Number / Year</label>
-              <input type="text" id="regno" name="regno" placeholder="e.g. RA2311003010000 (2nd Year)" />
-            </div>
-
-            <div class="form-group">
-              <label for="github">GitHub Profile URL</label>
-              <input type="url" id="github" name="github" placeholder="https://github.com/yourhandle" />
-            </div>
-
-            <div class="form-group">
-              <label for="interest">Primary Area of Interest</label>
-              <select id="interest" name="interest">
-                <option value="web">Web & Modern Frontend (Astro, React, UI/UX)</option>
-                <option value="backend">Backend & APIs (Spring Boot, Java, Python)</option>
-                <option value="cloud">Cloud, DevOps & Linux Systems</option>
-                <option value="general">Open Source Basics & Git</option>
-              </select>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-block" id="regBtn">
-              <span>Complete Registration</span>
-              <span>→</span>
-            </button>
-          </form>
-
-          <div id="regSuccess" style="display: none; margin-top: 1.5rem; padding: 1.25rem; border-radius: 12px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.35); color: #a7f3d0; text-align: center; font-size: 1rem; line-height: 1.6;">
-            <strong>Welcome to FOSS SRM Trichy!</strong><br />
-            Your registration has been received. Be sure to join our official <a href="https://chat.whatsapp.com/GtuJVlEUKXhKn3I67b8D1e" target="_blank" style="color: #25d366; font-weight: 600; text-decoration: underline;">WhatsApp Community</a> to stay updated!
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>&copy; {currentYear} {communityName} • Built with Astro OSS.</p>
-    </footer>
-
     <script>
-      const form = document.getElementById('regForm');
-      const success = document.getElementById('regSuccess');
-      const btn = document.getElementById('regBtn');
-
-      if (form && success && btn) {
-        form.addEventListener('submit', (e) => {
-          e.preventDefault();
-          btn.setAttribute('disabled', 'true');
-          btn.innerHTML = '<span>Processing Registration...</span>';
-
-          setTimeout(() => {
-            form.style.display = 'none';
-            success.style.display = 'block';
-          }, 600);
-        });
-      }
+      window.location.replace("https://tsrm.in");
     </script>
   </body>
 </html>

@@ -360,8 +360,142 @@ body {
 }
 
 /* =======================================================
-   PAST EVENTS SECTION (UNIFORM CARDS + FULL UNMAPPED IMAGES)
+   PAST EVENTS SECTION (GROUPED BY EVENT WITH FULL IMAGES)
    ======================================================= */
+.past-events-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  margin-top: 2rem;
+}
+
+.event-showcase-section {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 22px;
+  padding: 2.25rem 2.25rem 2.5rem 2.25rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.event-showcase-section.highlight-section {
+  border-color: rgba(99, 102, 241, 0.3);
+  background: linear-gradient(180deg, rgba(16, 17, 26, 0.88) 0%, rgba(10, 11, 16, 0.96) 100%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .event-showcase-section:hover {
+    border-color: rgba(99, 102, 241, 0.45);
+    box-shadow: 0 20px 48px -10px rgba(99, 102, 241, 0.2);
+  }
+}
+
+.event-showcase-header {
+  margin-bottom: 2rem;
+  max-width: 840px;
+}
+
+.event-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.past-event-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #a5b4fc;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+}
+
+.past-event-tag.tag-highlight {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.event-showcase-title {
+  font-size: clamp(1.4rem, 2.3vw, 1.85rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.event-showcase-desc {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Event Gallery Grids */
+.event-gallery-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.event-gallery-grid.cols-single {
+  grid-template-columns: 1fr;
+  max-width: 480px;
+}
+
+.event-gallery-grid.cols-double {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.event-gallery-grid.cols-triple {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-card {
+  position: relative;
+  background: rgba(8, 8, 12, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .gallery-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 12px 28px -6px rgba(99, 102, 241, 0.22);
+  }
+
+  .gallery-card:hover .event-img-fg {
+    transform: scale(1.02);
+  }
+}
+
+.gallery-caption {
+  padding: 0.85rem 1.15rem;
+  background: rgba(12, 13, 18, 0.92);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+  margin-top: auto;
+}
+
+.caption-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+/* Backward compatibility for past-events-grid / past-event-card */
 .past-events-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -446,21 +580,6 @@ body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-}
-
-.past-event-tag {
-  align-self: flex-start;
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #a5b4fc;
-  background: rgba(99, 102, 241, 0.12);
-  border: 1px solid rgba(99, 102, 241, 0.25);
-  padding: 0.25rem 0.65rem;
-  border-radius: 6px;
-  margin-bottom: 0.65rem;
 }
 
 .past-event-title {
@@ -552,6 +671,41 @@ body {
   margin-bottom: 2rem;
   font-size: 0.98rem;
   line-height: 1.55;
+}
+
+.portal-cta-wrap {
+  margin: 2rem 0 1.5rem 0;
+}
+
+.btn-portal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 1.05rem;
+  padding: 1rem 1.75rem;
+  text-decoration: none;
+}
+
+.portal-arrow {
+  font-size: 1.15rem;
+  transition: transform 0.2s ease;
+}
+
+.btn-portal:hover .portal-arrow {
+  transform: translate(2px, -2px);
+}
+
+.portal-badge-note {
+  font-size: 0.88rem;
+  color: #9ca3af;
+  text-align: center;
+}
+
+.portal-badge-note a {
+  color: #a5b4fc;
+  text-decoration: underline;
+  font-weight: 500;
 }
 
 .form-skeleton {
@@ -703,6 +857,17 @@ footer {
   .past-events-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .event-gallery-grid.cols-triple {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .event-gallery-grid.cols-triple > .gallery-card:last-child {
+    grid-column: span 2;
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
 @media (max-width: 960px) {
@@ -745,9 +910,13 @@ footer {
 
   /* 2. Disallow any sticky hover popups on phone touch */
   .card,
+  .event-showcase-section,
+  .gallery-card,
   .past-event-card,
   .register-card,
   .card:hover,
+  .event-showcase-section:hover,
+  .gallery-card:hover,
   .past-event-card:hover,
   .register-card:hover {
     transform: none !important;
@@ -755,23 +924,25 @@ footer {
 
   /* 3. Subtle & cool mobile-only animation: Breathing glow + top neon beam */
   .card,
+  .event-showcase-section,
   .past-event-card {
     animation: mobilePulseGlow 7s ease-in-out infinite alternate;
   }
 
-  .card:nth-child(2), .past-event-card:nth-child(2) {
-    animation-delay: 1.5s;
+  .card:nth-child(2),
+  .event-showcase-section:nth-child(2),
+  .past-event-card:nth-child(2) {
+    animation-delay: 1.8s;
   }
 
-  .card:nth-child(3), .past-event-card:nth-child(3) {
-    animation-delay: 3s;
-  }
-
-  .past-event-card:nth-child(4) {
-    animation-delay: 4.5s;
+  .card:nth-child(3),
+  .event-showcase-section:nth-child(3),
+  .past-event-card:nth-child(3) {
+    animation-delay: 3.6s;
   }
 
   .card::before,
+  .event-showcase-section::before,
   .past-event-card::before,
   .register-card::before {
     content: '';
@@ -788,9 +959,36 @@ footer {
 
   /* 4. Tactile native app micro-feedback */
   .card:active,
+  .gallery-card:active,
   .past-event-card:active {
     transform: scale(0.985) !important;
     transition: transform 0.1s ease;
+  }
+
+  .past-events-container {
+    gap: 2.25rem;
+  }
+
+  .event-showcase-section {
+    padding: 1.5rem 1.15rem 1.75rem 1.15rem;
+    border-radius: 18px;
+  }
+
+  .event-showcase-header {
+    margin-bottom: 1.4rem;
+  }
+
+  .event-gallery-grid.cols-single,
+  .event-gallery-grid.cols-double,
+  .event-gallery-grid.cols-triple {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .event-gallery-grid.cols-triple > .gallery-card:last-child {
+    grid-column: auto;
+    max-width: 100%;
+    margin: 0;
   }
 
   .past-events-grid {
