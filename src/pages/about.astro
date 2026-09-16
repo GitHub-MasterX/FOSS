@@ -8,13 +8,12 @@ const currentYear = new Date().getFullYear();
 const whatsappUrl = "https://chat.whatsapp.com/GtuJVlEUKXhKn3I67b8D1e";
 
 // Core Team Configuration:
-// To add your photo, drop the image into /public/team/ (e.g. /team/lead.jpg) and set the 'image' property.
-// If 'image' is empty, an elegant neon avatar placeholder is automatically displayed.
+// Set your photo in /public/team/ or use /default-avatar.svg for the default profile avatar.
 const teamMembers = [
   {
     name: "Lead Organizer",
     role: "Community & Club Lead",
-    image: "", // Example: "/team/lead.jpg"
+    image: "/default-avatar.svg", // Default profile avatar
     bio: "Fostering open-source software culture, student participation, and community events at SRM Trichy.",
     github: "https://github.com/",
     linkedin: "https://linkedin.com/",
@@ -22,7 +21,7 @@ const teamMembers = [
   {
     name: "Technical Lead",
     role: "Open Source & Systems",
-    image: "", // Example: "/team/tech.jpg"
+    image: "/default-avatar.svg",
     bio: "Guiding members in Git workflows, fullstack architectures, Linux systems, and upstream contributions.",
     github: "https://github.com/",
     linkedin: "https://linkedin.com/",
@@ -30,7 +29,7 @@ const teamMembers = [
   {
     name: "Operations Lead",
     role: "Logistics & Outreach",
-    image: "", // Example: "/team/operations.jpg"
+    image: "/default-avatar.svg",
     bio: "Coordinating hackathons, speaker sessions, registrations, and campus outreach across departments.",
     github: "https://github.com/",
     linkedin: "https://linkedin.com/",
@@ -38,7 +37,7 @@ const teamMembers = [
   {
     name: "Design & Media Lead",
     role: "Brand & Creative Direction",
-    image: "", // Example: "/team/design.jpg"
+    image: "/default-avatar.svg",
     bio: "Crafting visual identities, banners, motion elements, and digital experiences for FOSS initiatives.",
     github: "https://github.com/",
     linkedin: "https://linkedin.com/",
@@ -234,17 +233,12 @@ const teamMembers = [
           {teamMembers.map((member) => (
             <div class="team-card">
               <div class="team-avatar-wrap">
-                {member.image ? (
-                  <img src={member.image} alt={`${member.name} - ${member.role}`} class="team-avatar-img" />
-                ) : (
-                  <div class="team-avatar-placeholder" aria-label="Team member photo placeholder">
-                    <svg viewBox="0 0 24 24" class="avatar-icon" fill="none" stroke="currentColor" stroke-width="1.5">
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                      <circle cx="12" cy="7" r="4" />
-                    </svg>
-                    <span class="avatar-add-tag">+ Add Photo</span>
-                  </div>
-                )}
+                <img 
+                  src={member.image || "/default-avatar.svg"} 
+                  alt={`${member.name} - ${member.role}`} 
+                  class="team-avatar-img" 
+                  loading="lazy" 
+                />
               </div>
               <div class="team-content">
                 <span class="team-role-badge">{member.role}</span>
@@ -323,7 +317,7 @@ const teamMembers = [
         </p>
 
         <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="social-card-btn whatsapp-cta" style="background: rgba(37, 211, 102, 0.1); border-color: rgba(37, 211, 102, 0.35); color: #a7f3d0;">
-          <img src="/whatsapp.jpg" alt="WhatsApp" />
+          <img src="/whatsapp.svg" alt="WhatsApp" width="24" height="24" />
           <span>Join WhatsApp Community</span>
           <span>→</span>
         </a>
