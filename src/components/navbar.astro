@@ -23,6 +23,9 @@ const pathname = Astro.url.pathname;
       <a href="/event" class={pathname === "/event" || pathname === "/event/" ? "active" : ""}>
         <span>Events</span>
       </a>
+      <a href="/about#team">
+        <span>The Team</span>
+      </a>
       <a href="https://tsrm.in" target="_blank" rel="noopener noreferrer" class="nav-btn-register">
         <span>Register</span>
         <span class="external-icon" aria-hidden="true">↗</span>
@@ -49,6 +52,9 @@ const pathname = Astro.url.pathname;
       </a>
       <a href="/event" class={pathname === "/event" || pathname === "/event/" ? "active" : ""}>
         <span>Events</span>
+      </a>
+      <a href="/about#team">
+        <span>The Team (Us)</span>
       </a>
       <a href="https://tsrm.in" target="_blank" rel="noopener noreferrer" class="mobile-btn-register">
         <span>Register on tsrm.in ↗</span>

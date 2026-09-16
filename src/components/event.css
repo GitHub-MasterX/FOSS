@@ -138,20 +138,67 @@ body {
   display: inline-block;
 }
 
-.hero-subtitle {
+.conclave-tagline {
   color: var(--text-muted);
-  font-size: clamp(1.05rem, 2vw, 1.2rem);
-  max-width: 650px;
-  margin-bottom: 2.5rem;
-  line-height: 1.65;
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  max-width: 780px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+  font-weight: 500;
   animation: fadeInUp 0.7s ease-out 0.2s both;
+}
+
+/* Conclave Banner Showcase */
+.upcoming-poster-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto 2.5rem auto;
+  position: relative;
+  animation: fadeInUp 0.7s ease-out 0.25s both;
+}
+
+.upcoming-poster-frame {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  background: rgba(8, 18, 12, 0.9);
+  box-shadow: 0 16px 40px -10px rgba(34, 197, 94, 0.25), 0 0 35px rgba(6, 182, 212, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upcoming-poster-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(32px) brightness(0.35);
+  opacity: 0.65;
+  transform: scale(1.15);
+  pointer-events: none;
+}
+
+.upcoming-poster-fg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 /* Event Metadata Pills */
 .meta-grid {
   display: flex;
   gap: 2rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.25rem;
   border: 1px solid var(--border-color);
   background: var(--bg-card);
   padding: 1.2rem 2.2rem;
@@ -166,6 +213,11 @@ body {
   display: flex;
   flex-direction: column;
   text-align: left;
+}
+
+.meta-icon {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
 }
 
 .meta-label {
@@ -183,9 +235,102 @@ body {
   font-size: 1rem;
 }
 
+/* Conclave Narrative Card */
+.conclave-narrative-card {
+  max-width: 900px;
+  margin: 0 auto 2.25rem auto;
+  background: rgba(14, 15, 22, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.8rem 2.25rem;
+  text-align: left;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.conclave-para {
+  font-size: 1.05rem;
+  color: #e5e7eb;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.conclave-para:last-child {
+  margin-bottom: 0;
+}
+
+.conclave-para strong {
+  color: #38bdf8;
+}
+
+/* Four Pillars Grid */
+.conclave-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 2.25rem auto;
+}
+
+.pillar-card {
+  background: rgba(12, 13, 19, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.4rem 1.15rem;
+  text-align: left;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pillar-card:hover {
+  border-color: rgba(34, 197, 94, 0.45);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -6px rgba(34, 197, 94, 0.2);
+}
+
+.pillar-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.pillar-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.45rem;
+  line-height: 1.35;
+}
+
+.pillar-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Conclave Quote Box */
+.conclave-quote-box {
+  max-width: 860px;
+  margin: 0 auto 2.5rem auto;
+  padding: 1.2rem 2rem;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: 14px;
+  text-align: center;
+}
+
+.quote-text {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #a7f3d0;
+  line-height: 1.65;
+}
+
 /* Action Buttons */
 .cta-group {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   animation: fadeInUp 0.7s ease-out 0.4s both;
 }
@@ -203,6 +348,72 @@ body {
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   border: none;
+}
+
+.btn-instagram {
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.15), rgba(131, 58, 180, 0.15));
+  border: 1px solid rgba(225, 48, 108, 0.4);
+  color: #fce7f3;
+}
+
+.btn-instagram:hover {
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.25), rgba(131, 58, 180, 0.25));
+  border-color: rgba(225, 48, 108, 0.7);
+  box-shadow: 0 6px 24px rgba(225, 48, 108, 0.3);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.instagram-follow-box {
+  margin: 1.75rem 0 1.25rem 0;
+  padding: 1.4rem 1.6rem;
+  background: rgba(225, 48, 108, 0.06);
+  border: 1px solid rgba(225, 48, 108, 0.25);
+  border-radius: 12px;
+  text-align: left;
+}
+
+.insta-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #f472b6;
+  margin-bottom: 0.35rem;
+}
+
+.instagram-follow-box h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.instagram-follow-box p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+}
+
+.insta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(225, 48, 108, 0.12);
+  border: 1px solid rgba(225, 48, 108, 0.35);
+  padding: 0.55rem 1.25rem;
+  border-radius: 9999px;
+  color: #fce7f3;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.insta-chip:hover {
+  background: rgba(225, 48, 108, 0.25);
+  border-color: rgba(225, 48, 108, 0.65);
+  transform: translateY(-1px);
 }
 
 .btn-primary {
@@ -997,6 +1208,27 @@ footer {
 
   .event-img-frame {
     height: 240px;
+  }
+
+  .conclave-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .conclave-narrative-card {
+    padding: 1.35rem 1.15rem;
+  }
+
+  .conclave-quote-box {
+    padding: 1rem 1.25rem;
+  }
+
+  .upcoming-poster-container {
+    margin-bottom: 2rem;
+  }
+
+  .upcoming-poster-frame {
+    border-radius: 14px;
   }
 
   .register-card {

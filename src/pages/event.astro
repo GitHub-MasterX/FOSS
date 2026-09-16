@@ -3,11 +3,13 @@
 import Navbar from '../components/navbar.astro';
 import '../components/event.css';
 
-const eventName = "FOSS • SRM TRICHY";
-const eventDate = "Coming Soon • 2026";
-const venue = "SRM Institute of Science & Technology, Tiruchirappalli";
+const eventName = "Trichy FOSS 2026";
+const eventDate = "28 September 2026";
+const eventTime = "9:30 AM onwards";
+const venue = "501 IST, SRM Institute of Science and Technology, Tiruchirappalli";
 const whatsappUrl = "https://chat.whatsapp.com/GtuJVlEUKXhKn3I67b8D1e";
 const registrationUrl = "https://tsrm.in";
+const instagramUrl = "https://www.instagram.com/yuva_srmist/";
 ---
 
 <!doctype html>
@@ -16,7 +18,7 @@ const registrationUrl = "https://tsrm.in";
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Events & Hackathons | {eventName}</title>
+    <title>{eventName} | Free & Open Source Conclave • SRM Trichy</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,88 +34,153 @@ const registrationUrl = "https://tsrm.in";
     </div>
 
     <main class="container">
-      <!-- Hero Section -->
-      <section class="hero">
-        <div class="badge">
-          <span>Registration Open on tsrm.in</span>
+      <!-- UPCOMING FLAGSHIP CONCLAVE HERO SECTION -->
+      <section class="hero upcoming-hero">
+        <div class="badge-pill conclave-badge">
+          <span class="pulse-dot"></span>
+          <span>Upcoming Flagship Conclave • 28 Sept 2026</span>
         </div>
 
         <h1 class="hero-title">
-          The Future of Open Source is <br />
-          <span class="text-gradient">In The Cloud.</span>
+          Trichy FOSS <span class="text-gradient">2026</span>
         </h1>
 
-        <p class="hero-subtitle">
-          Join developers, cloud architects, and FOSS enthusiasts for intense hacking, backend hardening, 
-          and production scaling at SRM Trichy.
+        <p class="conclave-tagline">
+          Trichy FOSS 2026 brings the open-source community together for a day of ideas, conversations, technology, and collaboration.
         </p>
 
+        <!-- Official Conclave Banner Showcase -->
+        <div class="upcoming-poster-container">
+          <div class="upcoming-poster-frame">
+            <img src="/CURRENT_EVENT.PNG" alt="Trichy FOSS 2026 Banner Ambient Backdrop" class="upcoming-poster-bg" aria-hidden="true" />
+            <img src="/CURRENT_EVENT.PNG" alt="Trichy FOSS 2026 Official Conclave Poster - Open Source. Open Future." class="upcoming-poster-fg" />
+          </div>
+        </div>
+
+        <!-- Conclave Key Metadata Grid -->
         <div class="meta-grid">
           <div class="meta-item">
-            <span class="meta-label">Date & Timing</span>
+            <span class="meta-icon" aria-hidden="true">📅</span>
+            <span class="meta-label">Date</span>
             <span class="meta-value">{eventDate}</span>
           </div>
           <div class="meta-item">
+            <span class="meta-icon" aria-hidden="true">⏰</span>
+            <span class="meta-label">Timing</span>
+            <span class="meta-value">{eventTime}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon" aria-hidden="true">📍</span>
             <span class="meta-label">Campus Venue</span>
             <span class="meta-value">{venue}</span>
           </div>
         </div>
 
+        <!-- Conclave Narrative & Scope -->
+        <div class="conclave-narrative-card">
+          <p class="conclave-para">
+            <strong>Trichy FOSS 2026</strong> is a Free and Open Source Software student conclave, bringing the open-source community to Tiruchirappalli. It brings together students, developers, technology enthusiasts, industry professionals, and FOSS contributors to learn, connect, collaborate, and build in the open.
+          </p>
+          <p class="conclave-para">
+            Through inspiring speaker sessions, insightful technical discussions, and an engaging panel, the conclave explores real-world open-source journeys, emerging technologies, career opportunities, and the power of community-driven innovation.
+          </p>
+        </div>
+
+        <!-- Four Pillars of the Conclave -->
+        <div class="conclave-pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon" aria-hidden="true">🔨</div>
+            <h3>Learn from the builders</h3>
+            <p>Real architecture teardowns, production stories, and practical lessons from those building core tech.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon" aria-hidden="true">🎙️</div>
+            <h3>Hear from the contributors</h3>
+            <p>Direct experiences from global open-source maintainers shaping tools used by millions daily.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon" aria-hidden="true">🤝</div>
+            <h3>Connect with the community</h3>
+            <p>Network with fellow student hackers, mentors, speakers, and advocates across the tech ecosystem.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon" aria-hidden="true">🚀</div>
+            <h3>Start building in the open</h3>
+            <p>Step-by-step motivation to publish your code, submit pull requests, and lead your own projects.</p>
+          </div>
+        </div>
+
+        <!-- Inspirational Quote Box -->
+        <div class="conclave-quote-box">
+          <p class="quote-text">
+            "Expect real stories, technical insights, thought-provoking conversations, and a community that believes in building together. 🚀"
+          </p>
+        </div>
+
+        <!-- Main Action Buttons -->
         <div class="cta-group">
           <a href={registrationUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
             <span>Register on tsrm.in</span>
             <span class="btn-arrow" aria-hidden="true">↗</span>
           </a>
-          <a href="#tracks" class="btn btn-secondary">Explore Tracks</a>
+          <a href={instagramUrl} target="_blank" rel="noopener noreferrer" class="btn btn-instagram" title="Follow YUVA on Instagram for Live Updates">
+            <svg class="insta-svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <span>Follow YUVA on Instagram</span>
+            <span class="btn-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a href="#tracks" class="btn btn-secondary">Conclave Tracks</a>
           <a href="#past-events" class="btn btn-secondary">Past Events</a>
         </div>
       </section>
 
-      <!-- Event Tracks Section -->
+      <!-- Conclave Highlights / Tracks Section -->
       <section id="tracks" class="tracks-section">
         <div class="section-header">
-          <span class="section-badge">Upcoming Edition</span>
-          <h2 class="section-title">Event Highlights & Tracks</h2>
+          <span class="section-badge">Conclave Format</span>
+          <h2 class="section-title">What to Expect at Trichy FOSS 2026</h2>
         </div>
 
         <div class="grid">
           <div class="card">
             <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
             </div>
-            <h3>Backend Hardening</h3>
-            <p>Learn to design resilient REST APIs, manage database connection pools, secure JWT flows, and deploy bulletproof Spring Boot architectures.</p>
+            <h3>Inspiring Speaker Sessions</h3>
+            <p>Hear authentic, unfiltered narratives from industry builders about their open-source beginnings, overcoming engineering blockers, and scaling high-impact projects.</p>
           </div>
 
           <div class="card">
             <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
             </div>
-            <h3>Edge Computing</h3>
-            <p>Deploy lightning-fast frontends using Astro and modern client hydration, with ultra-low latency routing on global cloud networks.</p>
+            <h3>Insightful Technical Discussions</h3>
+            <p>Explore emerging technology stacks, Linux systems, backend paradigms, and transparent development practices directly applicable to real-world software careers.</p>
           </div>
 
           <div class="card">
             <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <h3>Payment Engineering</h3>
-            <p>Deep-dive into high-concurrency payment gateways, webhook idempotency, and transactional integrity in fintech systems.</p>
+            <h3>Engaging Community Panel</h3>
+            <p>A dynamic panel featuring contributors and mentors debating the future of open source, community funding, student pathways, and career opportunities.</p>
           </div>
         </div>
       </section>
 
-      <!-- Official Registration Portal Section -->
+      <!-- Official Registration Portal Section (tsrm.in & YUVA Instagram) -->
       <section id="register" class="register-section">
         <div class="register-card">
           <div class="status-indicator">
             <span class="dot pulse"></span>
-            <span class="status-text">Official Portal: Active</span>
+            <span class="status-text">Official Registration & Updates: Open</span>
           </div>
 
-          <h2>Event & Membership Registration</h2>
+          <h2>Register for Trichy FOSS 2026</h2>
           <p>
-            All registrations for FOSS SRM Trichy events, workshops, and community memberships are hosted directly on the SRM Trichy registration portal at <strong>tsrm.in</strong>.
+            Official delegate passes, workshop entry, and membership registration for <strong>Trichy FOSS 2026</strong> are hosted live on the SRM Trichy portal at <strong>tsrm.in</strong>. Follow along for attendee announcements!
           </p>
 
           <div class="portal-cta-wrap">
@@ -123,8 +190,22 @@ const registrationUrl = "https://tsrm.in";
             </a>
           </div>
 
+          <!-- YUVA Instagram Callout inside Registration Box -->
+          <div class="instagram-follow-box">
+            <div class="insta-info">
+              <span class="insta-tag">Live Festival & Conclave Updates</span>
+              <h4>Follow YUVA on Instagram</h4>
+              <p>Get instant speaker reveals, venue details, and schedule announcements on Instagram:</p>
+            </div>
+            <a href={instagramUrl} target="_blank" rel="noopener noreferrer" class="social-chip insta-chip">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <span>@yuva_srmist on Instagram</span>
+              <span class="chip-arrow">→</span>
+            </a>
+          </div>
+
           <div class="portal-badge-note">
-            <span>Direct link: <a href={registrationUrl} target="_blank" rel="noopener noreferrer">https://tsrm.in</a></span>
+            <span>Direct registration link: <a href={registrationUrl} target="_blank" rel="noopener noreferrer">https://tsrm.in</a></span>
           </div>
         </div>
       </section>
@@ -249,7 +330,7 @@ const registrationUrl = "https://tsrm.in";
       <!-- WhatsApp Community Callout -->
       <section class="whatsapp-banner">
         <h2>Join Our Community on WhatsApp</h2>
-        <p>Stay informed about future workshop registrations, hackathon announcements, and community meetups:</p>
+        <p>Stay connected with organizers, speakers, and fellow attendees for Trichy FOSS 2026 announcements:</p>
         <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
           <img src="/whatsapp.jpg" alt="WhatsApp" />
           <span>Join WhatsApp Community</span>
@@ -259,7 +340,7 @@ const registrationUrl = "https://tsrm.in";
     </main>
 
     <footer>
-      <p>&copy; 2026 FOSS Community • Built with Astro & Spring Boot.</p>
+      <p>&copy; 2026 FOSS Community SRM Trichy • Built with Astro OSS.</p>
     </footer>
   </body>
 </html>
